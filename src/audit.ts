@@ -39,7 +39,6 @@ export class Audit {
         }
         const getData = () => {
             if (method === "post" || method === "put" || method === "patch") {
-                console.log("DAAARRR")
                 const decorator = getDecorator(route!.action.decorators)
                 const data = decorator ? decorator.callback.apply(undefined, parameters || []) : parameters
                 return JSON.stringify(data)
